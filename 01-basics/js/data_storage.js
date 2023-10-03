@@ -1,112 +1,107 @@
-// OBJECT CREATIONAL METHODS
-// -------------------------
-// 1. LITERAL METHOD
+// let arr = [10, 11, 12];
+
+// let arrTwo = new Array(101, 102, 103, 104)
+// let arrThree = new Array(101)
+
+// console.log(arr.length)
+// console.log(arrTwo.length)
+// console.log(arrThree.length)
+
+let numbers = [101, 103, 105, 102, 109, 105];
+
+// numbers.push(199)
+// numbers.unshift(199)
+// numbers.shift()
+// numbers.pop()
+
+// numbers.sort()
+// numbers.fill(99, 1, 4)
+// const deletedResult = numbers.splice(1, 3);
+// console.log(deletedResult)
+// const copyItems = numbers.slice(1)
+// console.log(copyItems)      // ?
+
+// const str = numbers.join(", ")
+
+// console.log(str)
+
+// const result = numbers.reverse()
 
 
-// const books = ["book1", "book2", "book3"];
+// const result = numbers.map(function (v, i, a) {
+//     return 0
+// })
 
-// let box = {
-//     dimensions: {
-//         width: 4,
-//         height: 6,
-//     },
-//     books: books,
-//     addBook: function (newBook) {
-//         this.books.push(newBook);
-//     }
-// }
-
-// box.volume = box.dimensions.width * box.dimensions.height;
-
-// box.addBook("book4");
-
-// console.log(box.books.length)
-// console.log(books.length)
-
-// console.log(box)
-
-// delete box.volum;
-
-// delete box.xyz;
-
-// console.log(box)
+// const result = numbers.filter(function (value, index, array) {
+//     return value < 105
+// })
 
 
+// const result = numbers.findIndex(function (value) {
+//     return value > 104
+// })
+
+// const result = numbers.find(function (xyz) {
+//     return xyz > 104
+// })
+
+// const result = numbers.some(function (item) {
+//     return item > 108
+// })
+// const result = numbers.every(function (item) {
+//     return item > 102
+// })
+
+// const result = numbers.reduce(function (prevValue, accum, i, array) {
+
+//     return (prevValue += accum);
+// }, 0)
 
 
-
-// 2. CONSTRUCTOR METHOD : prototyping / blueprint
-
-// function Person(firstName, lastName) {
-//     this.firstName = firstName;
-//     this.lastName = lastName;
-
-//     // this.getDetails = function () {
-//     //     return "Hello, " + this.firstName + " " + this.lastName;
-//     // }
-// }
-
-// Person.prototype.getDetails = function(){
-//     return "Hello, " + this.firstName + " " + this.lastName;
-// }
+// const result = numbers.includes(105)
 
 
-// const johnDoe = new Person("John", "Doe");
+// const newArrayTwo = numbers.forEach(function (value) {
+//     console.log(value * 2)
+//     return value * 3
+// })
 
-// console.log(johnDoe.getDetails())
+// console.log(newArrayTwo)
+// const newArray = numbers.map(function (value) {
+//     return value * 2
+// })
 
-// const maryPublic = new Person("Mary", "Public");
+// console.log(newArray)
 
-// console.log(maryPublic.getDetails())
-
-
-
-
-
-
-
-
-
-
-
-
-// 3. INSTANCE METHOD : object inheritance 
-
-let shoe = {
-    size: 8
-}
-
-const magicShoe = Object.create(shoe);
-
-
-console.log(magicShoe.hasOwnProperty('size'));      // ?
-console.log(shoe.hasOwnProperty('size'));      // ?
-
-
-console.log(shoe.isPrototypeOf(magicShoe))
-console.log(magicShoe.isPrototypeOf(shoe))
-console.log(Object.prototype.isPrototypeOf(shoe))
-console.log(Object.prototype.isPrototypeOf(magicShoe))
-
-
-let now = new Date("Dec 21, 2023");
+// // console.log(result)
+// console.log(numbers)
 
 
 
-// console.log(magicShoe.size);     // { }
 
-// // magicShoe.size = 10;
-
-// console.log(magicShoe.size);    // 10
-// console.log(magicShoe)
-// console.log(shoe.size);    // ?
-
-
-
-// let str = new String("Hello World!");
-
-// console.log(str.length);            // ?
-
-// str.toLowerCase()
-// str.toUpperCase()
-// str.indexOf("!")
+let users = [
+    {
+        firstName: "John",
+        lastName: "Doe",
+        age: 34,
+        salary: 40000
+    },
+    {
+        firstName: "Jenny",
+        lastName: "Public",
+        age: 32,
+        salary: 50000
+    },
+    {
+        firstName: "Jack",
+        lastName: "Alice",
+        age: 39,
+        salary: 30000
+    },
+    {
+        firstName: "Jill",
+        lastName: "Shaun",
+        age: 31,
+        salary: 60000
+    },
+]
