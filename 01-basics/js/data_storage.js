@@ -37,23 +37,38 @@
 
 // 2. CONSTRUCTOR METHOD : prototyping / blueprint
 
-function Person(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+// function Person(firstName, lastName) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
 
-    this.getDetails = function () {
-        return "Hello, " + this.firstName + " " + this.lastName;
-    }
-}
+//     // this.getDetails = function () {
+//     //     return "Hello, " + this.firstName + " " + this.lastName;
+//     // }
+// }
+
+// Person.prototype.getDetails = function(){
+//     return "Hello, " + this.firstName + " " + this.lastName;
+// }
 
 
-const johnDoe = new Person("John", "Doe");
+// const johnDoe = new Person("John", "Doe");
 
-console.log(johnDoe.getDetails())
+// console.log(johnDoe.getDetails())
 
-const maryPublic = new Person("Mary", "Public");
+// const maryPublic = new Person("Mary", "Public");
 
-console.log(maryPublic.getDetails())
+// console.log(maryPublic.getDetails())
+
+
+
+
+
+
+
+
+
+
+
 
 // 3. INSTANCE METHOD : object inheritance 
 
@@ -63,10 +78,35 @@ let shoe = {
 
 const magicShoe = Object.create(shoe);
 
-console.log(magicShoe.size);     // { }
 
-// magicShoe.size = 10;
+console.log(magicShoe.hasOwnProperty('size'));      // ?
+console.log(shoe.hasOwnProperty('size'));      // ?
 
-console.log(magicShoe.size);    // 10
-console.log(magicShoe)
-console.log(shoe.size);    // ?
+
+console.log(shoe.isPrototypeOf(magicShoe))
+console.log(magicShoe.isPrototypeOf(shoe))
+console.log(Object.prototype.isPrototypeOf(shoe))
+console.log(Object.prototype.isPrototypeOf(magicShoe))
+
+
+let now = new Date("Dec 21, 2023");
+
+
+
+// console.log(magicShoe.size);     // { }
+
+// // magicShoe.size = 10;
+
+// console.log(magicShoe.size);    // 10
+// console.log(magicShoe)
+// console.log(shoe.size);    // ?
+
+
+
+// let str = new String("Hello World!");
+
+// console.log(str.length);            // ?
+
+// str.toLowerCase()
+// str.toUpperCase()
+// str.indexOf("!")
