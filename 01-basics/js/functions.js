@@ -1,4 +1,6 @@
 
+// FUNCTION DECLARATION - CAN BE CALLED BEFORE CREATION
+// -------------------
 // console.log(calcAge(1992))
 
 // function calcAge(birthYear) {
@@ -6,7 +8,8 @@
 // }
 
 
-
+// FUNCTION EXPRESSION - EXECUTES AT RUN TIME
+// -------------------
 // var addition = function (n1, n2) {
 //     return n1 + n2;
 // }
@@ -14,9 +17,10 @@
 
 
 
-// Function  Hoisting
+// FUNCTION HOISTING - HOISTING AT THE TOP
+// -------------------
 // function mystry() {
-//     // top of the function
+
 //     var chooseNumber = function () {       // xixo
 //         return 7
 //     }
@@ -76,6 +80,8 @@
 
 
 // ARROW FUNCTION  (argsList) => functionBody
+// --------------------------------------------
+
 // const add = (n1, n2) => n1 + n2
 
 // console.log(add(4, 4))
@@ -86,3 +92,38 @@
 // const newArray = numbers.map(value => value - 9);
 
 // console.log(newArray)
+
+
+
+// HOF || Callback
+// setTimeout(() => { console.log("2 seconds left") }, 2000);
+
+
+function greet(err, username) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log("Guter Morgan isle :", username);
+}
+
+function demoFn(arr, cb) {
+    if (arr.length > 2) {
+        cb(null, "John Doe");
+    } else {
+        cb(new Error("Too low values"))
+    }
+    console.log("Demo Function executed")
+}
+
+
+demoFn([1, 2], greet);
+
+
+let numbers = [101, 103]
+
+function xyz(value, index, array) {
+    console.log(this);
+}
+
+numbers.map(xyz)
