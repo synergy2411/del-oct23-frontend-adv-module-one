@@ -37,21 +37,26 @@
 
 // 2. CONSTRUCTOR METHOD : prototyping / blueprint
 
-// function Person(firstName, lastName) {
-//     this.firstName = firstName;
-//     this.lastName = lastName;
+function Person(firstName, lastName) {
+    // this = {}
+    this.firstName = firstName;
+    this.lastName = lastName;
 
-//     // this.getDetails = function () {
-//     //     return "Hello, " + this.firstName + " " + this.lastName;
-//     // }
-// }
+    console.log(this);      // {firstName: "", lastName :""}
+
+    // return this;
+
+    // this.getDetails = function () {
+    //     return "Hello, " + this.firstName + " " + this.lastName;
+    // }
+}
 
 // Person.prototype.getDetails = function(){
 //     return "Hello, " + this.firstName + " " + this.lastName;
 // }
 
 
-// const johnDoe = new Person("John", "Doe");
+const johnDoe = new Person("John", "Doe");
 
 // console.log(johnDoe.getDetails())
 

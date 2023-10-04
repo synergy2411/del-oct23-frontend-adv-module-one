@@ -79,16 +79,16 @@
 let user = {
     email: "test@test",
     age: 32,
-    getDetails: function () {
-        return () => this.email + " - " + this.age
-    }
-
+    getDetails: () => () => this.email + " - " + this.age
 }
 
 
-const nestedFn = user.getDetails()
+const firstNestedFn = user.getDetails()
 
-console.log(nestedFn());
+// const secondNestedFn = firstNestedFn()
+
+// console.log(secondNestedFn());
+console.log(firstNestedFn())
 
 
 
