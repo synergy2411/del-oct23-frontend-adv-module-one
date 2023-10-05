@@ -1,10 +1,10 @@
 window.onload = function () {
 
+
+    document.body.style.backgroundColor = "#555";
+
     let expenseList = [];
 
-    if (localStorage.getItem("expenses")) {
-        expenseList = JSON.parse(localStorage.getItem("expenses"))
-    }
 
 
     let btnSave = document.getElementById("btnSave");
@@ -28,11 +28,17 @@ window.onload = function () {
         })
     }
 
+    if (localStorage.getItem("expenses")) {
+
+        expenseList = JSON.parse(localStorage.getItem("expenses"))
+        render()
+    }
+
     const storeLocally = () => {
         localStorage.setItem("expenses", JSON.stringify(expenseList))
     }
 
-    const render = () => {
+    function render() {
         expenseContainer.innerHTML = '';
         expenseList.forEach(expense => {
             const liElement = document.createElement("li");
@@ -40,7 +46,7 @@ window.onload = function () {
             btnDelete.innerText = "✖";
             btnDelete.classList.add("btn", "btn-danger", "btn-sm")
 
-            liElement.classList.add("list-group-item", "d-flex", "justify-content-space-between", "mb-3");
+            liElement.classList.add("list-group-item", "d-flex", "justify-content-space-around", "mb-3");
             liElement.innerHTML = `
                 <p class='lead'> You have spend <strong>INR${expense.amount}</strong> on ${expense.title} dated ${expense.date}
             `
@@ -56,12 +62,13 @@ window.onload = function () {
         if (txtTitle.value.trim() === "" || txtAmount.value.trim() === "" || txtDate.value.trim() === "") {
             return;
         }
-        expenseList.push({
+        let newItem = {
             id: Math.round(Math.random() * 1000).toString(),
             title: txtTitle.value.toUpperCase(),
             amount: Number(txtAmount.value),
             date: new Date(txtDate.value)
-        })
+        }
+        expenseList.push(newItem);
         txtTitle.value = ""
         txtAmount.value = ""
         txtDate.value = ""
