@@ -1,4 +1,12 @@
 window.onload = function () {
+
+    let expenseList = [];
+
+    if (localStorage.getItem("expenses")) {
+        expenseList = JSON.parse(localStorage.getItem("expenses"))
+    }
+
+
     let btnSave = document.getElementById("btnSave");
     let btnReset = document.getElementById("btnReset");
 
@@ -7,17 +15,21 @@ window.onload = function () {
     let txtDate = document.getElementById("date");
     let expenseContainer = document.getElementById("expense-container");
 
-    let expenseList = [];
+
 
     const deleteButtonRegistration = () => {
-        const btnDanger = document.querySelectorAll(".btn-danger");
-        btnDanger.forEach(btn => {
+        const btnDangerList = document.querySelectorAll(".btn-danger");
+        btnDangerList.forEach(btn => {
             btn.addEventListener("click", function (e) {
                 e.preventDefault();
                 const listItem = this.closest(".list-group-item");
                 listItem.remove()
             })
         })
+    }
+
+    const storeLocally = () => {
+        localStorage.setItem("expenses", JSON.stringify(expenseList))
     }
 
     const render = () => {
@@ -54,6 +66,7 @@ window.onload = function () {
         txtAmount.value = ""
         txtDate.value = ""
         render();
+        storeLocally();
     })
 
 
