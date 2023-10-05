@@ -125,19 +125,62 @@
 
 
 
-let user = {
-    name: "john",
-    age: 32,
-    address: {
-        city: "Gurugram",
-        street: "201 Main Road"
-    },
-    friends: ["foo", "bar", "bam"]
-}
+// let user = {
+//     name: "john",
+//     age: 32,
+//     address: {
+//         city: "Gurugram",
+//         street: "201 Main Road"
+//     },
+//     friends: ["foo", "bar", "bam"]
+// }
 
-let { name, age, address: { city: ct, street: st }, friends: [f1, f2, f3] } = user;
+// let { name, age, address: { city: ct, street: st }, friends: [f1, f2, f3] } = user;
 
 
+
+// let friends = [
+//     {
+//         name: "joey",
+//         age: 32
+//     },
+//     {
+//         name: "Ross",
+//         age: 34
+//     },
+//     {
+//         name: "Rachel",
+//         age: 31
+//     }
+// ]
+
+// let [x, y, z] = friends;
+
+// const {name : n1, age: a1} = x;
+// const {name : n2, age: a2} = y;
+// const {name : n3, age: a3} = z;
+
+// let [{ name: n1, age: a1 }] = friends
+
+// console.log(n1)
+
+
+
+// let user = {
+//     address: {
+//         city: "Pune"
+//     }
+// }
+
+// let { address: { city } } = user
+
+
+// city = "Hyd";
+
+// console.log(user);      // ?
+
+
+// SHALLOW COPY
 
 let friends = [
     {
@@ -153,3 +196,91 @@ let friends = [
         age: 31
     }
 ]
+
+// let [x, y, z] = friends;
+
+// x.name = "New Name";
+
+// console.log(friends[0])
+
+
+// const deepCopy = JSON.parse(JSON.stringify(friends));
+
+// deepCopy[0].name = "Deep Copy Changed";
+
+// console.log(friends[0])
+// console.log(deepCopy[0])
+
+
+// let newFriends = [...friends];
+
+// console.log(newFriends)     // ?
+
+// newFriends[0].name = "New Friend Name";
+
+// console.log(friends[0]);       // ?
+
+
+
+// MAP / SET
+// ---------
+
+// Map store the data in the pair of key and value
+
+
+let map = new Map();
+
+map.set("hello", "World")
+map.set(true, "Boolean")
+map.set(99, "Number")
+map.set({ age: 32 }, "user")
+
+console.log(map.size)
+
+
+for (let [key, value] of map.entries()) {
+    console.log(`${key} : ${value}`)
+}
+for (let key of map.keys()) {
+    console.log(`${key} `)
+}
+for (let value of map.values()) {
+    console.log(`${value} `)
+}
+
+
+map.clear()
+
+console.log(map.size)
+
+
+
+// Set stores the unique data
+
+// let userOne = {
+//     name: "John"
+// }
+// let userTwo = {
+//     name: "Jenny"
+// }
+// let userThree = {
+//     name: "Jack"
+// }
+
+// let set = new Set();
+
+// set.add(userOne)
+// set.add(userTwo)
+// set.add(userThree)
+// set.add(userTwo);
+
+// console.log(set.size);      // ?
+
+
+
+
+function demoArr(arr = []) {
+    console.log("LENGTH :", arr.length);
+}
+
+demoArr([123, 321]);
