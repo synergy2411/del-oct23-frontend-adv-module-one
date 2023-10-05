@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+    />
+    <script src="./js/app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-8 offset-2">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="text-center">My Awesome Budget App</h4>
+              <form>
+                <!-- title -->
+
+                <div class="form-group">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="title"
+                      id="title"
+                      placeholder=""
+                    />
+                    <label for="title">Title :</label>
+                  </div>
+                </div>
+
+                <!-- amount -->
+
+                <div class="form-group">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="amount"
+                      id="amount"
+                      placeholder=""
+                      min="0"
+                      step="0.5"
+                    />
+                    <label for="amount">Amount :</label>
+                  </div>
+                </div>
+
+                <!-- date -->
+
+                <div class="form-group">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="date"
+                      class="form-control"
+                      name="date"
+                      id="date"
+                      placeholder=""
+                      min="2023-01-01"
+                      max="2023-12-31"
+                    />
+                    <label for="date">Created At :</label>
+                  </div>
+                </div>
+
+                <!-- button -->
+                <div class="row">
+                  <div class="col">
+                    <div class="d-grid">
+                      <button class="btn btn-primary" id="btnSave">SAVE</button>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="d-grid">
+                      <button class="btn btn-warning" id="btnReset">
+                        RESET
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
